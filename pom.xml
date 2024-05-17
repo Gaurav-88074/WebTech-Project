@@ -8,7 +8,8 @@
     <artifactId>WebTechProject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>WebTechProject</name>
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,6 +95,21 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+<!--                            <mainClass>hello</mainClass>-->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
+
+
     </build>
 </project>
